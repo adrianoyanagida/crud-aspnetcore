@@ -1,0 +1,44 @@
+﻿@page "{id:int}"
+@model CRUDASP.NETMVA.Pages.EditarModel
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h2>Editar @Model.Cliente.Id</h2>
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <input asp-for="Cliente.Id" type="hidden" />
+    <div>
+        <label asp-for="Cliente.Nome"></label>
+        <div>
+            <input asp-for="Cliente.Nome" />
+            <span asp-validation-for="Cliente.Nome"></span>
+        </div>
+    </div>
+    <div>
+        <label asp-for="Cliente.Telefone"></label>
+        <div>
+            <input asp-for="Cliente.Telefone" />
+            <span asp-validation-for="Cliente.Telefone"></span>
+        </div>
+    </div>
+    <div>
+        <label asp-for="Cliente.Email"></label>
+        <div>
+            <input asp-for="Cliente.Email" />
+            <span asp-validation-for="Cliente.Email"></span>
+        </div>
+    </div>
+    <div>
+        <label asp-for="Cliente.Cidade"></label>
+        <div>
+            <input asp-for="Cliente.Cidade" />
+            <span asp-validation-for="Cliente.Cidade"></span>
+        </div>
+    </div>
+    <div>
+        <button type="submit">Salvar</button>
+    </div>
+
+</form>
+

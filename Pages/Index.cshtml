@@ -1,0 +1,43 @@
+﻿@page
+@model CRUDASP.NETMVA.Pages.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Tabela do Banco</h2>
+
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID </th>
+                <th>Nome </th>
+                <th>Telefone </th>
+                <th>Email </th>
+                <th>Cidade </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var cliente in Model.Clientes)
+            {
+            <tr>
+                <td>@cliente.Id</td>
+                <td>@cliente.Nome</td>
+                <td>@cliente.Telefone</td>
+                <td>@cliente.Email</td>
+                <td>@cliente.Cidade</td>
+                <td>
+                    <button type="submit" asp-page-handler="excluir"
+                        asp-route-id="@cliente.Id">Excluir</button>
+                </td>
+                <td>
+                    <a asp-page="./Editar" asp-route-id="@cliente.Id">Editar</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <p></p>
+    <a asp-page="./Cadastro">Cadastrar</a>
+</form>
+

@@ -1,0 +1,20 @@
+﻿@page
+@model CRUDASP.NETMVA.Pages.CadastroModel
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<h2>Cadastro</h2>
+<p>Digite os dados do cliente abaixo:</p>
+
+<form method="post">
+    <div asp-validation-summary="All"></div>
+
+    <div>Name: <input asp-for="Cliente.Nome" /></div>
+    <div>Telefone: <input asp-for="Cliente.Telefone" /></div>
+    <div>Email: <input asp-for="Cliente.Email" /></div>
+    <div>Cidade: <input asp-for="Cliente.Cidade" /></div>
+
+    <input type="submit" />
+</form>
+
